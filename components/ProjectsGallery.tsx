@@ -2,8 +2,6 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import Lightbox from "react-image-lightbox"
-import "react-image-lightbox/style.css"
 
 const projectImages = [
   {
@@ -20,18 +18,11 @@ const projectImages = [
 const IMAGES_PER_PAGE = 6
 
 export default function ProjectsGallery() {
-  const [currentImage, setCurrentImage] = useState(0)
-  const [isOpen, setIsOpen] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
 
   const totalPages = Math.ceil(projectImages.length / IMAGES_PER_PAGE)
   const startIndex = (currentPage - 1) * IMAGES_PER_PAGE
   const visibleImages = projectImages.slice(startIndex, startIndex + IMAGES_PER_PAGE)
-
-  const openLightbox = (index: number) => {
-    setCurrentImage(startIndex + index)
-    setIsOpen(true)
-  }
 
   return (
     <section id="projects" className="py-20 lg:py-32">
@@ -47,11 +38,7 @@ export default function ProjectsGallery() {
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {visibleImages.map((image, index) => (
-            <div
-              key={index}
-              className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer"
-              onClick={() => openLightbox(index)}
-            >
+            <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg">
               <Image
                 src={image.src || "/placeholder.svg"}
                 alt={image.alt}
@@ -72,18 +59,6 @@ export default function ProjectsGallery() {
           </div>
         )}
       </div>
-
-      {isOpen && (
-        <Lightbox
-          mainSrc={projectImages[currentImage].src}
-          nextSrc={projectImages[(currentImage + 1) % projectImages.length].src}
-          prevSrc={projectImages[(currentImage + projectImages.length - 1) % projectImages.length].src}
-          onCloseRequest={() => setIsOpen(false)}
-          onMovePrevRequest={() => setCurrentImage((currentImage + projectImages.length - 1) % projectImages.length)}
-          onMoveNextRequest={() => setCurrentImage((currentImage + 1) % projectImages.length)}
-          imageTitle={projectImages[currentImage].alt}
-        />
-      )}
     </section>
   )
 }
