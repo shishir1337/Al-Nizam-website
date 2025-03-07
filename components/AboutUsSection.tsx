@@ -52,10 +52,6 @@ export default function AboutUsSection() {
             </div>
           ))}
         </div>
-
-        <div className="text-center">
-          <Button className="bg-primary text-white hover:bg-primary/90">Learn More About Us</Button>
-        </div>
       </div>
     </section>
   )
