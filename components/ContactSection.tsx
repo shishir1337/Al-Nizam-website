@@ -114,7 +114,11 @@ export default function ContactSection() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
                   <Phone className="w-6 h-6 text-primary" />
-                  <p className="text-gray-600 dark:text-gray-400">+971 5 085 77432</p>
+                  <p className="text-gray-600 dark:text-gray-400">+971 5 085 77432</p><br/>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <Phone className="w-6 h-6 text-primary" />
+                  <p className="text-gray-600 dark:text-gray-400">04 575 8261</p>
                 </div>
                 <div className="flex items-center space-x-4">
                   <Mail className="w-6 h-6 text-primary" />

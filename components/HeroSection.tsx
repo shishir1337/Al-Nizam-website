@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export default function HeroSection() {
   return (
@@ -21,18 +22,21 @@ export default function HeroSection() {
         <p className="text-xl sm:text-2xl md:text-3xl mb-8 max-w-3xl mx-auto">
           AL NIZAM delivers top-quality mechanical, electrical, and plumbing solutions for projects across the UAE.
         </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button size="lg" className="bg-accent text-primary hover:bg-accent/90 text-lg px-8 py-3">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            href="/#services"
+            className="bg-accent text-primary hover:bg-accent/90 text-lg font-medium px-8 py-3 rounded-md transition duration-300"
+          >
             Explore Our Services
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-white bg-transparent text-white hover:bg-white hover:text-primary text-lg px-8 py-3"
+          </Link>
+          <Link
+            href="/#contact"
+            className="border border-white bg-transparent text-white hover:bg-white hover:text-primary text-lg font-medium px-8 py-3 rounded-md transition duration-300"
           >
             Get a Free Quote
-          </Button>
+          </Link>
         </div>
+
       </div>
       <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background to-transparent"></div>
     </section>

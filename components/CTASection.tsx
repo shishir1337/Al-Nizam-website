@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export default function CTASection() {
   return (
@@ -20,16 +21,12 @@ export default function CTASection() {
             solutions for your project.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" className="bg-accent text-primary hover:bg-accent/90">
-              Get a Free Quote
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white bg-transparent text-white hover:bg-white hover:text-primary"
+            <Link
+              href="/#contact"
+              className="border border-white bg-transparent text-white hover:bg-white hover:text-primary text-lg font-medium px-8 py-3 rounded-md transition duration-300"
             >
               Contact Our Team
-            </Button>
+            </Link>
           </div>
         </div>
       </div>

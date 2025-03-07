@@ -4,6 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -14,14 +15,14 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-md dark:bg-gray-900">
-      <div className="container mx-auto flex h-20 items-center justify-between px-4">
+      <div className="container mx-auto flex h-24 items-center justify-between px-4">
         <a href="/" className="flex items-center space-x-2">
           <Image
             src="/logo.png"
             alt="AL NIZAM Logo"
-            width={100}
-            height={32}
-            className="h-8 w-auto object-contain"
+            width={400} // 
+            height={120} // 
+            className="h-12 w-auto object-contain" // 
           />
         </a>
 
@@ -50,7 +51,6 @@ export default function Header() {
           >
             Contact
           </a>
-          <Button className="bg-primary text-white hover:bg-primary/90">Get a Quote</Button>
         </nav>
 
         <div className="lg:hidden">
@@ -92,7 +92,6 @@ export default function Header() {
             >
               Contact
             </a>
-            <Button className="mt-4 w-full bg-primary text-white hover:bg-primary/90">Get a Quote</Button>
           </div>
         </div>
       )}
